@@ -18,16 +18,16 @@ const ContactForm = () => {
             </p>
             
             <div className="flex space-x-4 mt-4">
-              <a href="#Home" aria-label="LinkedIn" className="text-orange-500 hover:text-blue-600 cursor-pointer">
+              <a href="#Home" aria-label="LinkedIn" className="text-orange-700 hover:text-blue-600 cursor-pointer">
                 <FontAwesomeIcon icon={faLinkedinIn} className='text-2xl'/>
               </a>
               <a href="#home" aria-label="YouTube" className="text-gray-500 hover:text-gray-700">
-                <FontAwesomeIcon icon={faYoutube} className='text-2xl text-orange-500 hover:text-red-600 cursor-pointer'/>
+                <FontAwesomeIcon icon={faYoutube} className='text-2xl text-orange-700 hover:text-red-600 cursor-pointer'/>
               </a>
-              <a href="#home" aria-label="Facebook" className=" text-orange-500 hover:text-blue-700 cursor-pointer">
+              <a href="#home" aria-label="Facebook" className=" text-orange-700 hover:text-blue-700 cursor-pointer">
                 <FontAwesomeIcon icon={faFacebook} className='text-2xl'/>
               </a>
-              <a href="#home" aria-label="Tiktok" className=" text-orange-500 hover:text-purple-900 cursor-pointer">
+              <a href="#home" aria-label="Tiktok" className=" text-orange-700 hover:text-purple-900 cursor-pointer">
                 <FontAwesomeIcon icon={faTiktok} className='text-2xl'/>
               </a>
             </div>
