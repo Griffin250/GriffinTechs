@@ -1,13 +1,95 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body{
+    overscroll-behavior: none;
+}
+.website-title{
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin-left: -5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* Default Styles (Mobile First Approach) */
+.website-title span {
+    font-size: 20px;
+  }
+  
+  /* Extra Small Devices (Phones) */
+  @media (max-width: 480px) {
+    .website-title span {
+      font-size: 25px;
+    }
+  }
+  
+  /* Small Devices (Tablets in portrait mode) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .website-title span {
+      font-size: 30px;
+    }
+  }
+  
+  /* Medium Devices (Tablets in landscape mode, small laptops) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .website-title span {
+      font-size: 40px;
+    }
+  }
+  
+  /* Large Devices (Laptops, Desktops) */
+  @media (min-width: 1025px) and (max-width: 1200px) {
+    .website-title span {
+      font-size: 50px;
+    }
+  }
+  
+  /* Extra Large Devices (Wide screens, large desktops) */
+  @media (min-width: 1201px) {
+    .website-title span {
+      font-size: 60px;
+    }
+  }
+  
+  
+/* Default Styles (Mobile First Approach) */
+.website-title {
+    font-size: 20px;
+  }
+  
+  /* Extra Small Devices (Phones) */
+  @media (max-width: 480px) {
+    .website-title {
+      font-size: 20px;
+    }
+  }
+  
+  /* Small Devices (Tablets in portrait mode) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .website-title {
+      font-size: 25px;
+    }
+  }
+  
+  /* Medium Devices (Tablets in landscape mode, small laptops) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .website-title {
+      font-size: 35px;
+    }
+  }
+  
+  /* Large Devices (Laptops, Desktops) */
+  @media (min-width: 1025px) and (max-width: 1200px) {
+    .website-title {
+      font-size: 45px;
+    }
+  }
+  
+  /* Extra Large Devices (Wide screens, large desktops) */
+  @media (min-width: 1201px) {
+    .website-title {
+      font-size: 54px;
+    }
+  }
+  
