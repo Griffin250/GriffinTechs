@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import profileImage from '../../assets/bannerImages/computerBanner.jpg'
 import website_logo from '../../assets/logos/griffintechs.png'
 import { useState } from 'react';
@@ -32,16 +32,16 @@ const Navbar = () => {
         About
         </li>
         <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
-          Services
+          Services <FontAwesomeIcon icon={faChevronDown} />
         </li>
         <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
-          Projects
+          Projects <FontAwesomeIcon icon={faChevronDown} />
         </li>
         <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
-          Developers
+          Developers <FontAwesomeIcon icon={faChevronDown} />
         </li>
         <NavLink to="/contactForm"> <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
-        Contact
+        Contact 
         </li></NavLink>
         <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
           Help
@@ -52,9 +52,9 @@ const Navbar = () => {
       {/* Right side - New Job Button, Notification Icon, Profile */}
       <div className="flex items-center space-x-6">
       <FontAwesomeIcon icon={faSearch} className="text-gray-400 hover:text-white cursor-pointer h-6 md:block" />
-        <button className="hidden md:flex items-center space-x-1 bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
+        <NavLink to={'/loginSignup'} > <button className="hidden md:flex items-center space-x-1 bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
           <span>Join Us</span>
-        </button>
+        </button></NavLink> 
         
         <img
           src={profileImage} // Replace with actual profile image URL
@@ -77,25 +77,32 @@ const Navbar = () => {
     {/* Mobile Menu */}
     {mobileMenuOpen && (
       <div className="md:hidden bg-gray-800 text-gray-400 p-4 space-y-2">
-  
-  <li className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
-          Home
-        </li>
-        <a href="#Home" className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
-          Services
-        </a>
-        <a href="#Home" className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
-          Projects
-        </a>
-        <a href="#Home" className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
-          Developers
-        </a>
-        <a href="#Home" className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
+   <ul className="md:flex items-center space-x-6 text-gray-400">
+     <NavLink to={'/'}><li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+       Home
+        </li> </NavLink>
+        <NavLink to='/...'>  <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+        About
+        </li></NavLink>
+        <NavLink to='/...'> <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+          Services <FontAwesomeIcon icon={faChevronDown} />
+        </li></NavLink>
+        <NavLink to='/projects'> <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+          Projects <FontAwesomeIcon icon={faChevronDown} />
+        </li></NavLink>
+        <NavLink to='/developers'> <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+          Developers <FontAwesomeIcon icon={faChevronDown} />
+        </li></NavLink>
+        <NavLink to="/contactForm"> <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+        Contact 
+        </li></NavLink>
+        <NavLink to='/help'><li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
           Help
-        </a>
-        <button className="block bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
-          Join Us
-        </button>
+        </li></NavLink>
+        </ul>
+        <NavLink to={'/loginSignup'} > <button className="md:flex items-center space-x-1 bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
+          <span>Join Us</span>
+        </button></NavLink> 
       </div>
     )}
   </div>

@@ -1,6 +1,7 @@
 
 import samEydeVgs from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
 import ConsultationSection from '../components/layouts/ConsultationSection'
+import ContactForm from './Contact'
 import PricingSection from './PricingSection'
 
 const links = [
@@ -194,6 +195,7 @@ const links = [
 
 
 <ConsultationSection />
+<ContactForm />
       </>
     )
   }

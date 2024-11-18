@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Services from '../src/pages/Services'
 import Help from '../src/components/layouts/Help'
 import NotFound from "./pages/NotFound";
+import LoginSignup from "./components/Forms/LoginSignup";
+import Projects from "./pages/Projects";
 const App = () => {
   return (
     <div>
@@ -21,8 +23,10 @@ const App = () => {
         <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />}/>
           <Route path="/contactForm" element={<ContactForm />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/loginSignup"  element={<LoginSignup />}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
   
