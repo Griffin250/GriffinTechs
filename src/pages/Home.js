@@ -1,6 +1,7 @@
 
 import samEydeVgs from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
 import ConsultationSection from '../components/layouts/ConsultationSection'
+import PricingSection from './PricingSection'
 
 const links = [
     { name: 'Open roles', href: '#' },
@@ -18,7 +19,7 @@ const links = [
   export default function Home() {
     return (
         <>
-        
+        <PricingSection />
     <div className="bg-gray-200 py-12 px-6 md:px-16 lg:px-24">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}

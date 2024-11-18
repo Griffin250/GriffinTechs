@@ -4,6 +4,9 @@ import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
 import profileImage from '../../assets/bannerImages/computerBanner.jpg'
 import website_logo from '../../assets/logos/griffintechs.png'
 import { useState } from 'react';
+import  { NavLink } from 'react-router-dom'
+
+
 const Navbar = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,35 +17,45 @@ const Navbar = () => {
       <div className="flex items-center space-x-2">
         <img src={website_logo} alt="" className="w-12 h-12 rounded-full sm:w-20 sm:h-20"  />
         <h1 className="text-orange-700 font-bold website-title">
-          <span>G</span>riffin<span>T</span>echs
+          <NavLink to={'/'}><span>G</span>riffin<span>T</span>echs </NavLink>
         </h1>
       </div>
   
       {/* Navigation Links - Hidden on small screens */}
+      
       <div className="hidden md:flex items-center space-x-6 text-gray-400">
-        <a href="#Home" className="hover:text-white font-bold hover:bg-gray-800 p-2 rounded-md">
-          Dashboard
-        </a>
-        <a href="#Home" className="hover:text-white font-bold hover:bg-gray-800 p-2 rounded-md">
+     <ul className="hidden md:flex items-center space-x-6 text-gray-400">
+     <NavLink to={'/'}><li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+       Home
+        </li> </NavLink>
+        <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+        About
+        </li>
+        <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
           Services
-        </a>
-        <a href="#Home" className="hover:text-white font-bold hover:bg-gray-800 p-2 rounded-md">
+        </li>
+        <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
           Projects
-        </a>
-        <a href="#Home" className="hover:text-white font-bold hover:bg-gray-800 p-2 rounded-md">
+        </li>
+        <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
           Developers
-        </a>
-        <a href="#Home" className="hover:text-white font-bold hover:bg-gray-800 p-2 rounded-md">
-          Hire a Professional
-        </a>
+        </li>
+        <NavLink to="/contactForm"> <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+        Contact
+        </li></NavLink>
+        <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
+          Help
+        </li>
+        </ul>
       </div>
-  
+     
       {/* Right side - New Job Button, Notification Icon, Profile */}
       <div className="flex items-center space-x-6">
+      <FontAwesomeIcon icon={faSearch} className="text-gray-400 hover:text-white cursor-pointer h-6 md:block" />
         <button className="hidden md:flex items-center space-x-1 bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
           <span>Join Us</span>
         </button>
-        <FontAwesomeIcon icon={faSearch} className="text-gray-400 hover:text-white cursor-pointer h-6 hidden md:block" />
+        
         <img
           src={profileImage} // Replace with actual profile image URL
           alt="Profile"
@@ -64,9 +77,10 @@ const Navbar = () => {
     {/* Mobile Menu */}
     {mobileMenuOpen && (
       <div className="md:hidden bg-gray-800 text-gray-400 p-4 space-y-2">
-        <a href="#Home" className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
-          Dashboard
-        </a>
+  
+  <li className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
+          Home
+        </li>
         <a href="#Home" className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
           Services
         </a>
@@ -77,7 +91,7 @@ const Navbar = () => {
           Developers
         </a>
         <a href="#Home" className="block hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md">
-          Hire a Professional
+          Help
         </a>
         <button className="block bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
           Join Us

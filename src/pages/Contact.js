@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import{faFacebook, faLinkedinIn, faTiktok, faYoutube} from '@fortawesome/free-brands-svg-icons';
+
+
+
 const ContactForm = () => {
     return (
         <div className="flex flex-col md:flex-row justify-between p-6 md:p-12 bg-gray-50 text-gray-800">

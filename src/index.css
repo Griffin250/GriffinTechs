@@ -12,6 +12,10 @@ html, body{
     margin-left: -5%;
 }
 
+.active{
+ color: orangered;
+}
+
 /* Default Styles (Mobile First Approach) */
 .website-title span {
     font-size: 20px;
@@ -41,14 +45,14 @@ html, body{
   /* Large Devices (Laptops, Desktops) */
   @media (min-width: 1025px) and (max-width: 1200px) {
     .website-title span {
-      font-size: 50px;
+      font-size: 36px;
     }
   }
   
   /* Extra Large Devices (Wide screens, large desktops) */
   @media (min-width: 1201px) {
     .website-title span {
-      font-size: 60px;
+      font-size: 36px;
     }
   }
   
@@ -82,14 +86,14 @@ html, body{
   /* Large Devices (Laptops, Desktops) */
   @media (min-width: 1025px) and (max-width: 1200px) {
     .website-title {
-      font-size: 45px;
+      font-size: 30px;
     }
   }
   
   /* Extra Large Devices (Wide screens, large desktops) */
   @media (min-width: 1201px) {
     .website-title {
-      font-size: 54px;
+      font-size: 30px;
     }
   }
   

@@ -5,7 +5,7 @@ import { faInstagram, faFacebook, faYoutube, faGithub,
 import logo from '../../assets/logos/griffintechs.png'
 const Footer = () => {
   return (
-    <footer className="bg-[#0f172a] text-gray-300 pt-5 pb-2 px-4 sm:px-8 md:px-16">
+    <footer className="bg-gray-900 text-gray-300 pt-5 pb-2 px-4 sm:px-8 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
      
         {/* ........................Solutions Section .........................*/}

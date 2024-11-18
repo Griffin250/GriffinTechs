@@ -1,5 +1,6 @@
 import React from 'react'
 import backgroundImage from '../../assets/bannerImages/BackgroundImage.jpeg';
+import { NavLink } from 'react-router-dom';
 
 export const ConsultationSection = () => {
 
@@ -22,9 +23,9 @@ export const ConsultationSection = () => {
           <br />
           We stand by the expertise and consulting we provide.
         </h3>
-        <button className="mt-8 px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded hover:bg-blue-700 focus:outline-none">
-          BOOK A CONSULTATION
-        </button>
+        <NavLink to={'/contactForm'}> <button className="mt-8 px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded hover:bg-blue-700 focus:outline-none">
+          BOOK A CONSULTATION 
+        </button></NavLink>
       </div>
     </div>
   );
