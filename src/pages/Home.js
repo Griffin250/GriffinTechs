@@ -2,7 +2,6 @@
 import samEydeVgs from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
 import ConsultationSection from '../components/layouts/ConsultationSection'
 import ContactForm from './Contact'
-import HeroSection from './HeroSection'
 import PricingSection from './PricingSection'
 
 const links = [
@@ -21,7 +20,7 @@ const links = [
   export default function Home() {
     return (
         <>
-        { /*<HeroSection /> */}
+       
 
         <PricingSection />
     <div className="bg-gray-200 py-12 px-6 md:px-16 lg:px-24">
