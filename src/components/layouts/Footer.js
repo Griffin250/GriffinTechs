@@ -15,8 +15,11 @@ const Footer = () => {
             <li className="cursor-pointer opacity-75 hover:opacity-100  ">Marketing</li>
             <li className="cursor-pointer opacity-75 hover:opacity-100  ">Analytics</li>
             <li className="cursor-pointer opacity-75 hover:opacity-100  ">Automation</li>
-            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Commerce</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">E-Commerce</li>
             <li className="cursor-pointer opacity-75 hover:opacity-100  ">Insights</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  "> Reviews </li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  "> Pricing</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Afiliate Program </li>
           </ul>
         </div>
         
@@ -24,9 +27,13 @@ const Footer = () => {
         <div>
           <h5 className="text-lg font-semibold mb-4">Support</h5>
           <ul className="space-y-2">
-            <li className="cursor-pointer opacity-75 hover:opacity-100">Submit ticket</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100">Knowledge Base</li>
             <li className="cursor-pointer opacity-75 hover:opacity-100">Documentation</li>
-            <li className="cursor-pointer opacity-75 hover:opacity-100">Guides</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Don Not Sell My Personal Information</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100">Refer a Friend</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  "> Cookie Settings</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Accessiblity</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Report Abuse </li>
           </ul>
         </div>
         
@@ -38,6 +45,11 @@ const Footer = () => {
             <li className="cursor-pointer opacity-75 hover:opacity-100">Blog</li>
             <li className="cursor-pointer opacity-75 hover:opacity-100">Jobs</li>
             <li className="cursor-pointer opacity-75 hover:opacity-100">Press</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  "> Sitemap </li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Careers</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Contact</li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Academy </li>
+            <li className="cursor-pointer opacity-75 hover:opacity-100  ">Our Technology</li>
           </ul>
         </div>
         
@@ -53,7 +65,7 @@ const Footer = () => {
         
         {/* Newsletter Section */}
         <div className="col-span-2 sm:col-span-1">
-          <h5 className="text-lg font-semibold mb-4">Subscribe to our newsletter</h5>
+          <h5 className="text-lg font-semibold mb-4">Subscribe to our Newsletter</h5>
           <p className="text-sm mb-4">
             The latest news, articles, and resources, sent to your inbox weekly.
           </p>
@@ -74,7 +86,7 @@ const Footer = () => {
       <div className='flex'>
           <img src={logo} alt="" className='w-24 flex'/>
           </div>
-        <p>© 2024 Sam-IT, Inc. All rights reserved.</p>
+        <p>Copyright © 2024 GriffinTechs, Inc. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a href="https://fcaebook.com" aria-label="Facebook" target='blank' className="text-orange-900 hover:text-orange-600">
           <FontAwesomeIcon icon={faFacebook} className='size-7' /> 

@@ -11,7 +11,8 @@ const plans = [
   {
     plan: "CHOICE PLUS",
     price: { current: 3.95, renewal: 21.99, discount: "82%" },
-    features: ["50 Websites", "50 GB NVMe Storage", "500 Concurrent Visitors", "24/7 Chat Support",],
+    features: ["50 Websites", "100 GB NVMe Storage", "500 Concurrent Visitors", "24/7 Chat Support", "Priority Support", 
+      "Dedicated IP Address", "Enhanceed DDos Protecton", "Malware Scanner"],
     highlight: true,
   },
   {
@@ -42,6 +43,7 @@ const PricingSection = () => {
             plan={plan.plan}
             price={plan.price}
             features={plan.features}
+            otherFeatures={plan.otherFeatures}
             highlight={plan.highlight}
           />
         ))}

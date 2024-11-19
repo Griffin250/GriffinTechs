@@ -4,6 +4,7 @@
 
 html, body{
     overscroll-behavior: none;
+    padding-top: 48px;
 }
 .website-title{
     font-weight: bold;

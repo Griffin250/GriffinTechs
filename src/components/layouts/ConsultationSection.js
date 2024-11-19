@@ -3,7 +3,12 @@ import backgroundImage from '../../assets/bannerImages/BackgroundImage.jpeg';
 import { NavLink } from 'react-router-dom';
 
 export const ConsultationSection = () => {
-
+const scrollToTop = () =>{
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  })
+}
   return (
     <div
       className="relative flex items-center justify-center text-center py-24 px-4 sm:py-32"
@@ -23,7 +28,7 @@ export const ConsultationSection = () => {
           <br />
           We stand by the expertise and consulting we provide.
         </h3>
-        <NavLink to={'/contactForm'}> <button className="mt-8 px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded hover:bg-blue-700 focus:outline-none">
+        <NavLink to={'/contactForm'} onClick={scrollToTop}> <button className="mt-8 px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded hover:bg-blue-700 focus:outline-none">
           BOOK A CONSULTATION 
         </button></NavLink>
       </div>
