@@ -31,7 +31,7 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section className="py-12 px-6 bg-gray-200">
+    <section className="py-12 px-6 bg-gray-100">
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold text-gray-800">Building and hosting your website just got easier.</h1>
         <p className="mt-4 text-gray-600">With our hosting plans, you get all the tools and guidance you need to build and launch a truly impressive website.</p>

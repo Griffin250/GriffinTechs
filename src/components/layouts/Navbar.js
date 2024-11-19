@@ -111,10 +111,14 @@ const Navbar = () => {
 
         {/* Right side - New Job Button, Notification Icon, Profile */}
         <div className="flex items-center space-x-6">
+          <form className="searchForm flex" method="get">
+            <input type="seacrh" placeholder="Search here..."  className="hidden"/> 
           <FontAwesomeIcon
             icon={faSearch}
             className="text-gray-400 hover:text-white cursor-pointer h-6 md:block"
           />
+          </form>
+         
           <NavLink to={"/loginSignup"} onClick={scrollToTop}>
             {" "}
             <button className="hidden md:flex items-center space-x-1 bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">

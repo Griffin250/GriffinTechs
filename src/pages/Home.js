@@ -23,7 +23,7 @@ const links = [
        
 
         <PricingSection />
-    <div className="bg-gray-200 py-12 px-6 md:px-16 lg:px-24">
+    <div className="bg-gray-100 py-12 px-6 md:px-16 lg:px-24">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-5xl font-bold text-gray-700 mb-4">Our Servicees</h2>
@@ -41,7 +41,7 @@ const links = [
       {/* Feature Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
         {/* Push to Deploy */}
-        <div className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-md shadow-gray-400 hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600">
           <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">IT Support</h3>
           <p className="text-gray-600">
           Computer & Network Setup, Management and Support<br />
@@ -49,7 +49,7 @@ const links = [
           </p>
         </div>
         {/* SSL Certificates */}
-        <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600">
+        <div className="bg-gray-50 p-6 rounded-lg shadow-md shadow-gray-400 hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600">
           <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Managed Services</h3>
           <p className="text-gray-600">
           IT System Planning and Maintenance<br /> 
@@ -58,7 +58,7 @@ const links = [
           </p>
         </div>
         {/* Simple Queues */}
-        <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600">
+        <div className="bg-gray-50 p-6 rounded-lg shadow-md shadow-gray-400 hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600">
           <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Security</h3>
           <p className="text-gray-600">
           Malware Protection <br/>
@@ -68,7 +68,7 @@ const links = [
           </p>
         </div>
         {/* Advanced Security */}
-        <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600 hover:text-white">
+        <div className="bg-gray-50 p-6 rounded-lg shadow-md shadow-gray-400 hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600 hover:text-white">
           <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Help Deask</h3>
           <p className="text-gray-600">
           Direct Support to End Users
@@ -140,7 +140,7 @@ const links = [
 
 
 
-      <div className="bg-gray-200 py-12 px-6 md:px-16 lg:px-24">
+      <div className="bg-gray-100 py-12 px-6 md:px-16 lg:px-24">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-gray-800 mb-4">Lets bring your Dreams to Life</h2>
@@ -157,7 +157,7 @@ const links = [
       {/* Feature Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
         {/* Push to Deploy */}
-        <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:bg-orange-600 hover:text-white text-gray-600  transition-shadow cursor-pointer">
+        <div className="bg-gray-50 shadow-gray-500 p-6 rounded-lg shadow-md hover:bg-orange-600 hover:text-white text-gray-600  transition-shadow cursor-pointer">
           <h3 className="text-xl font-semibold mb-2">Push to deploy</h3>
           <p className=" ">
           Easily bring your applications to life with our streamlined deployment services. With just a few steps, your app can be live and accessible. <br/>
@@ -166,7 +166,7 @@ const links = [
         </div>
         
         {/* SSL Certificates */}
-        <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg cursor-pointer hover:bg-orange-600 hover:text-white transition-shadow">
+        <div className="bg-gray-50 p-6 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg cursor-pointer hover:bg-orange-600 hover:text-white transition-shadow">
           <h3 className="text-xl font-semibold mb-2">SSL certificates</h3>
           <p className="">
           We take security seriously. All our services come with SSL certificates to protect your app and user data, ensuring a secure environment and building trust with your users.<br/>
@@ -174,7 +174,7 @@ const links = [
           </p>
         </div>
         {/* Simple Queues */}
-        <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600 hover:text-white">
+        <div className="bg-gray-50 p-6 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600 hover:text-white">
           <h3 className="text-xl font-semibold mb-2">Reliable Support</h3>
           <p className="">
           Our team is dedicated to providing you with responsive, knowledgeable support.<br/>
@@ -182,7 +182,7 @@ const links = [
           </p>
         </div>
         {/* Advanced Security */}
-        <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600
+        <div className="bg-gray-50 p-6 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition-shadow cursor-pointer hover:bg-orange-600
          hover:text-white hover:ease-in-out">
           <h3 className="text-xl font-semibold mb-2">Advanced security</h3>
           <p className="">
