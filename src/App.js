@@ -3,7 +3,7 @@ import Footer from "./components/layouts/Footer";
 import Navbar from "./components/layouts/Navbar";
 import Home from "../src/pages/Home";
 import ContactForm from "./pages/Contact";
-import ChatbotButton from "./components/ui/ChatbotButton";
+import Chatbot from "./components/ui/Chatbot";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Services from '../src/pages/Services'
@@ -18,7 +18,7 @@ const App = () => {
         <Navbar />
 
         {/* .. */}
-        <ChatbotButton />
+        <Chatbot/>
         <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
