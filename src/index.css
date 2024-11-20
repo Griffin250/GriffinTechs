@@ -16,6 +16,9 @@ html, body{
 .active{
  color: orangered;
 }
+.active button{
+  background: orangered;
+}
 
 /* Default Styles (Mobile First Approach) */
 .website-title span {

@@ -121,8 +121,8 @@ const Navbar = () => {
          
           <NavLink to={"/loginSignup"} onClick={scrollToTop}>
             {" "}
-            <button className="hidden md:flex items-center space-x-1 bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
-              <span>Join Us</span>
+            <button className="hidden md:flex items-center space-x-1 border-orange-600 border hover:bg-orange-600 text-white py-1 px-3 rounded-lg font-bold text-xl">
+              <span className="">Join Us</span>
             </button>
           </NavLink>
 
