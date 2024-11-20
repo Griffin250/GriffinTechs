@@ -9,9 +9,10 @@ import About from "./pages/About";
 import Services from '../src/pages/Services'
 import Help from '../src/components/layouts/Help'
 import NotFound from "./pages/NotFound";
-import LoginSignup from "./components/Forms/LoginSignup";
+import LoginSignup from "./components/Auth/LoginSignup";
 import Projects from "./pages/Projects";
 const App = () => {
+  
   return (
     <div>
       <BrowserRouter> 
