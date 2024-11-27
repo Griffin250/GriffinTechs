@@ -1,8 +1,10 @@
 
 import samEydeVgs from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
 import ConsultationSection from '../components/layouts/ConsultationSection'
+import BlogPosts from './BlogPosts'
 import ContactForm from './Contact'
 import PricingSection from './PricingSection'
+import Product from './Product'
 
 const links = [
     { name: 'Open roles', href: '#' },
@@ -21,12 +23,14 @@ const links = [
     return (
         <>
        
-
+       
         <PricingSection />
+        <ConsultationSection />
     <div className="bg-gray-100 py-12 px-6 md:px-16 lg:px-24">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-5xl font-bold text-gray-700 mb-4">Our Servicees</h2>
+        
+        <h2 className="text-5xl font-bold text-gray-700 mb-4">Our Services</h2>
         {/* Subtitle */}
         <h2 className="text-gray-600 text-3xl mb-8">
         The Best Defense is a Good Offense.
@@ -193,10 +197,9 @@ const links = [
       </div>
     </div>
 
+<Product/>
    { /*<Banner /> */} 
-
-
-<ConsultationSection />
+   <BlogPosts />
 <ContactForm />
       </>
     )

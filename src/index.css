@@ -25,6 +25,11 @@ html, body{
     font-size: 20px;
   }
   
+.btn:hover .right-arrow{
+  transform: translateX(8px);
+  transition: 0.3s ease-in;
+}
+
   /* Extra Small Devices (Phones) */
   @media (max-width: 480px) {
     .website-title span {

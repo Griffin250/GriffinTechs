@@ -22,12 +22,13 @@ const App = () => {
         <Chatbot/>
         <Routes>
         <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/aboutus" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />}/>
           <Route path="/contactForm" element={<ContactForm />} />
           <Route path="/help" element={<Help />} />
           <Route path="/loginSignup"  element={<LoginSignup />}/>
+          
           <Route path="*" element={<NotFound/>}/>
         </Routes>
   

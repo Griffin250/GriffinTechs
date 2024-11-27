@@ -1,85 +1,156 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { login, signup } from "../Auth/Firebase";
+import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
-  const [action, setAction] = useState("LOGIN AS ADMIN");
+const LoginSignup = () => {
+  const [signState, setSignState] = useState("Sign In");
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // User authentication logic
+  const user_auth = async (event) => {
+    event.preventDefault();
+    if (signState === "Sign In") {
+      await login(email, password);
+    } else {
+      await signup(name, email, password);
+    }
+  };
+
+  // Form submission handling
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Simulate login validation
+    const loginSuccessful = true;
+    if (loginSuccessful) {
+      navigate("/");
+    } else {
+      alert("Login failed. Please try again.");
+    }
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
-        <div className="flex items-center justify-between mb-4">
-          <button
-            className={`w-1/2 py-2 text-center font-medium ${
-              action === "LOGIN AS ADMIN" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
-            } rounded-l-md`}
-            onClick={() => setAction("LOGIN AS ADMIN")}
-          >
-            ADMIN
-          </button>
-          <button
-            className={`w-1/2 py-2 text-center font-medium ${
-              action === "LOGIN AS USER" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
-            } rounded-r-md`}
-            onClick={() => setAction("LOGIN AS USER")}
-          >
-            USER
-          </button>
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 text-white">
+      <div className="w-full max-w-md bg-gray-900 rounded-lg shadow-md p-8">
+        {/* Form Title */}
+        <h1 className="text-2xl font-bold mb-6 text-center">{signState}</h1>
 
-        <h2 className="text-center text-lg font-semibold text-gray-700 mb-4">
-          {action}
-        </h2>
-        
-
-        <form className="space-y-4">
-          {action === "LOGIN AS ADMIN" && (
-            <div className="flex items-center border border-gray-300 rounded-md px-3 py-2">
-            
-              <FontAwesomeIcon icon={faUser} className="h-5 w-5 mr-3"  />
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {signState === "Sign Up" && (
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
+                Name
+              </label>
               <input
                 type="text"
-                placeholder="Admin user email / Identifier"
-                className="w-full bg-transparent focus:outline-none text-gray-700"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full px-4 py-2 border rounded-lg bg-gray-700 border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-orange-600"
+                placeholder="Your Name" autoComplete="on"
+                required
               />
             </div>
           )}
 
-          <div className="flex items-center border border-gray-300 rounded-md px-3 py-2">
-          <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5 mr-3"  />
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-300 mb-1"
+            >
+              Email
+            </label>
             <input
               type="email"
-              placeholder="Email"
-              className="w-full bg-transparent focus:outline-none text-gray-700"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg bg-gray-700 border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-orange-600"
+              placeholder="Your Email" autoComplete="on"
+              required
             />
           </div>
 
-          <div className="flex items-center border border-gray-300 rounded-md px-3 py-2">
-          <FontAwesomeIcon icon={faLock} className="h-5 w-5 mr-3"  />
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-300 mb-1"
+            >
+              Password
+            </label>
             <input
               type="password"
-              placeholder="Password"
-              autoComplete="off"
-              className="w-full bg-transparent focus:outline-none text-gray-700"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg bg-gray-700 border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-orange-600"
+              placeholder="Your Password" autoComplete="current-password"
+              required
             />
           </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            onClick={user_auth}
+            className="w-full py-2 bg-orange-600 hover:bg-orange-700 rounded-lg text-white font-semibold transition duration-300"
+          >
+            {signState}
+          </button>
         </form>
 
-        {action === "LOGIN AS USER" && (
-          <div className="text-sm text-gray-600 mt-4">
-            Forgot Password?{" "}
-            <span className="text-blue-500 cursor-pointer">Click here!</span> -{" "}
-            Don’t have an account?{" "}
-            <span className="text-blue-500 cursor-pointer">Register here!</span>
+        {/* Form Help */}
+        <div className="flex justify-between items-center mt-4 text-sm">
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="remember" autoComplete="on"
+              className="form-checkbox h-4 w-4 text-orange-600 bg-gray-700 border-gray-600 focus:ring-orange-600"
+            />
+            <label htmlFor="remember" className="text-gray-300">
+              Remember Me
+            </label>
           </div>
-        )}
+          <p className="text-orange-500 cursor-pointer hover:underline">
+            Need Help?
+          </p>
+        </div>
 
-        <button className="w-full mt-6 bg-blue-500 text-white py-2 rounded-md shadow-md hover:bg-blue-600">
-          Login
-        </button>
+        {/* Form Switch */}
+        <div className="mt-6 text-center text-sm text-gray-300">
+          {signState === "Sign In" ? (
+            <p>
+              New to GriffinTechs?{" "}
+              <span
+                onClick={() => setSignState("Sign Up")}
+                className="text-orange-500 font-medium cursor-pointer hover:underline"
+              >
+                Sign Up Now
+              </span>
+            </p>
+          ) : (
+            <p>
+              Already have an account?{" "}
+              <span
+                onClick={() => setSignState("Sign In")}
+                className="text-orange-500 font-medium cursor-pointer hover:underline"
+              >
+                Sign In Now
+              </span>
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default LoginSignup;

@@ -5,7 +5,7 @@ import {
   faBars,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-import profileImage from "../../assets/bannerImages/computerBanner.jpg";
+import profileImage from "../../assets/icons/Language_1.png";
 import website_logo from "../../assets/logos/griffintechs.png";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -76,7 +76,7 @@ const Navbar = () => {
               </li>
             </NavLink>
 
-            <NavLink to="/abouttt" onClick={scrollToTop}>
+            <NavLink to="/aboutus" onClick={scrollToTop}>
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 About
               </li>
@@ -86,7 +86,7 @@ const Navbar = () => {
                 Projects <FontAwesomeIcon icon={faChevronDown} />
               </li>
             </NavLink>
-            <NavLink to="/servicesss" onClick={scrollToTop}>
+            <NavLink to="/services" onClick={scrollToTop}>
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Services <FontAwesomeIcon icon={faChevronDown} />
               </li>
@@ -153,13 +153,13 @@ const Navbar = () => {
                 Home
               </li>{" "}
             </NavLink>
-            <NavLink to="/abouttt" onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink to="/aboutus" onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
               {" "}
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 About
               </li>
             </NavLink>
-            <NavLink to="/servicesss" onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink to="/services" onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
               {" "}
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Services <FontAwesomeIcon icon={faChevronDown} />
