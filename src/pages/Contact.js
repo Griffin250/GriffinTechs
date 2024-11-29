@@ -50,24 +50,36 @@ const ContactForm = () => {
   });
 
   return (
-    <div className="flex flex-col md:flex-row justify-between p-6 md:p-12 bg-gray-100 text-gray-800">
+    <div className="flex flex-col md:flex-row justify-between p-6 md:p-12 bg-gradient-to-br from-blue-200 via-gray-100 text-gray-800">
       {/* Left Section */}
       <div className="flex flex-col mb-8 md:mb-0 md:w-1/3">
         <div className="border-t border-gray-500 w-8 mb-2"></div>
         <h2 className="text-2xl font-semibold mb-4">Connect with us</h2>
 
         <p className="text-blue-600 mb-4">
-          support@griffintechs.tech
+          <a
+            href="mailto:sam-it-ub@hotmail.com"
+            className="hover:text-orange-500"
+          >
+            sam-it-ub@hotmail.com{" "}
+          </a>
           <br />
-          (713) 429-4749
+          <a href="tel:+47 429-474 90" className="hover:text-orange-500">
+            {" "}
+            +47 429-474 90{" "}
+          </a>
         </p>
 
         <h3 className="text-lg font-semibold mb-2">Arendal, Norway</h3>
-        <p className="text-blue-600 mb-4">
-          6811 Arendal
+        <a
+          href="https://www.google.com/maps/place/Sam+Eyde+high+school/@58.480899,8.723333,17z/data=!3m1!4b1!4m6!3m5!1s0x464794c3cc8a9ccd:0xee8dfbab565a402!8m2!3d58.480899!4d8.723333!16s%2Fg%2F122b8z26?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+          className="text-blue-600 mb-4 hover:text-orange-700"
+          target="blank"
+        >
+          Østensbuveien 80,
           <br />
-          SamEyde, Arendal 77055
-        </p>
+          4848 Arendal
+        </a>
 
         <div className="flex space-x-4 mt-4">
           <a

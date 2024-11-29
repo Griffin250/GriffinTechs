@@ -34,7 +34,7 @@ const LoginSignup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 text-white">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-tl from-blue-200 via-gray-100 text-white">
       <div className="w-full max-w-md bg-gray-900 rounded-lg shadow-md p-8">
         {/* Form Title */}
         <h1 className="text-2xl font-bold mb-6 text-center">{signState}</h1>

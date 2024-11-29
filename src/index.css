@@ -84,6 +84,10 @@ html, body{
     .website-title {
       font-size: 20px;
     }
+    .web-slogan{
+      margin-top: -12px;
+    }
+  
   }
   
   /* Small Devices (Tablets in portrait mode) */
@@ -91,6 +95,10 @@ html, body{
     .website-title {
       font-size: 25px;
     }
+    .web-slogan{
+      margin-top: -12px;
+    }
+  
   }
   
   /* Medium Devices (Tablets in landscape mode, small laptops) */
@@ -98,6 +106,10 @@ html, body{
     .website-title {
       font-size: 35px;
     }
+    .web-slogan{
+      margin-top: -12px;
+    }
+  
   }
   
   /* Large Devices (Laptops, Desktops) */
@@ -105,12 +117,18 @@ html, body{
     .website-title {
       font-size: 30px;
     }
+    .web-slogan{
+      margin-top: -12px;
+    }
   }
   
   /* Extra Large Devices (Wide screens, large desktops) */
   @media (min-width: 1201px) {
     .website-title {
       font-size: 30px;
+    }
+    .web-slogan{
+      margin-top: -12px;
     }
   }
   
