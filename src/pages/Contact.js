@@ -12,7 +12,7 @@ import useWeb3Forms from "@web3forms/react";
 const ContactForm = () => {
   const {
     register,
-    handleSubmittttt,
+    handleSubmit,
     reset,
     formState: { errors, isSubmitting },
   } = useForm({
@@ -20,7 +20,7 @@ const ContactForm = () => {
   });
 
   const [isSuccess, setIsSuccess] = useState(false);
-  const [messagesss, setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
   // Please update the Access Key in the .env
   const apiKey =
