@@ -30,6 +30,14 @@ html, body{
   transition: 0.3s ease-in;
 }
 
+.blog-section{
+  width: 68%;
+}
+
+.blog-section-divider{
+  height: 1.6px;
+}
+
   /* Extra Small Devices (Phones) */
   @media (max-width: 480px) {
     .website-title span {

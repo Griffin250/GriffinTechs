@@ -1,13 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import {
   faFacebook,
   faLinkedinIn,
   faTiktok,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-
-import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 
@@ -16,15 +14,13 @@ const ContactForm = () => {
     register,
     handleSubmit,
     reset,
-    watch,
-    control,
-    setValue,
-    formState: { errors, isSubmitSuccessful, isSubmitting },
+    formState: { errors, isSubmitting },
   } = useForm({
     mode: "onTouched",
   });
+
   const [isSuccess, setIsSuccess] = useState(false);
-  const [message, setMessage] = useState(false);
+  const [message, setMessage] = useState("");
 
   // Please update the Access Key in the .env
   const apiKey =
@@ -36,16 +32,23 @@ const ContactForm = () => {
       from_name: "GriffinTechs",
       subject: "New Contact Message from your Website",
     },
-    onSuccess: (msg, data) => {
+    onSuccess: (msg) => {
       setIsSuccess(true);
-      setMessage(msg);
+      setMessage("Message sent successfully!");
       reset();
+
+      // Hide the popup after 5 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+        setMessage("");
+      }, 5000);
     },
-    onError: (msg, data) => {
+    onError: (msg) => {
       setIsSuccess(false);
-      setMessage(msg);
+      setMessage("Failed to send the message. Please try again.");
     },
   });
+
   return (
     <div className="flex flex-col md:flex-row justify-between p-6 md:p-12 bg-gray-100 text-gray-800">
       {/* Left Section */}
@@ -101,60 +104,59 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/*......................... Right Section................................ */}
+      {/* Right Section */}
       <form
         className="flex flex-col space-y-4 md:w-2/3"
         method="post"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col md:flex-row md:space-x-4">
-          <input
-            type="checkbox"
-            id=""
-            className="hidden"
-            style={{ display: "none" }}
-            {...register("botcheck")}
-          ></input>
-          <div className="flex flex-col w-full md:w-1/2">
-            <label className="text-sm font-semibold">
-              First Name (required)
-            </label>
-            <input
-              type="text"
-              placeholder="First Name"
-              autoComplete="false"
-              className={`w-full px-4  py-3 border placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900 focus:ring-4  
-              ${
-                errors["First Name"]
-                  ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                  : "border-gray-300 focus:border-blue-400 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-              }`}
-              {...register("First Name", {
-                required: "First name is required",
-                maxLength: 80,
-              })}
-            />
-          </div>
+  <input
+    type="checkbox"
+    id=""
+    className="hidden"
+    style={{ display: "none" }}
+    {...register("botcheck")}
+  />
+  <div className="flex flex-col w-full md:w-1/2 md:mt-0 mt-4">
+    <label className="text-sm font-semibold">First Name (required)</label>
+    <input
+      type="text"
+      placeholder="First Name"
+      autoComplete="false"
+      className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none focus:ring-4  
+      ${
+        errors["First Name"]
+          ? "border-red-600 focus:border-red-600 ring-red-100"
+          : "border-gray-300 focus:border-blue-400 ring-gray-100"
+      }`}
+      {...register("First Name", {
+        required: "First name is required",
+        maxLength: 80,
+      })}
+    />
+  </div>
 
-          <div className="flex flex-col w-full md:w-1/2">
-            <label className="text-sm font-semibold">Last Name</label>
-            <input
-              type="text"
-              placeholder="Last Name"
-              autoComplete="false"
-              className={`w-full px-4 py-3 border placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  
-              ${
-                errors["Last Name"]
-                  ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                  : "border-gray-300 focus:border-blue-400 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-              }`}
-              {...register("Last Name", {
-                required: "Last Name is required",
-                maxLength: 80,
-              })}
-            />
-          </div>
-        </div>
+  <div className="flex flex-col w-full md:w-1/2 md:mt-0 mt-4">
+    <label className="text-sm font-semibold">Last Name</label>
+    <input
+      type="text"
+      placeholder="Last Name"
+      autoComplete="false"
+      className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none focus:ring-4  
+      ${
+        errors["Last Name"]
+          ? "border-red-600 focus:border-red-600 ring-red-100"
+          : "border-gray-300 focus:border-blue-400 ring-gray-100"
+      }`}
+      {...register("Last Name", {
+        required: "Last Name is required",
+        maxLength: 80,
+      })}
+    />
+  </div>
+</div>
+
 
         <div className="mb-5">
           <label htmlFor="email_address" className="sr-only">
@@ -164,12 +166,11 @@ const ContactForm = () => {
             id="email_address"
             type="email"
             placeholder="Email Address"
-            name="email"
             autoComplete="false"
-            className={`w-full px-4 py-3 border placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
+            className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none focus:ring-4 ${
               errors.email
-                ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                : "border-gray-300 focus:border-blue-400 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                ? "border-red-600 focus:border-red-600 ring-red-100"
+                : "border-gray-300 focus:border-blue-400 ring-gray-100"
             }`}
             {...register("email", {
               required: "Enter your email",
@@ -190,10 +191,10 @@ const ContactForm = () => {
           <textarea
             name="message"
             placeholder="Enter Your Message..."
-            className={`w-full px-4 py-3 border placeholder:text-gray-800 dark:text-white dark:placeholder:text-gray-200 dark:bg-gray-900   rounded-md outline-none  h-36 focus:ring-4  ${
+            className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 ${
               errors.message
-                ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                : "border-gray-300 focus:border-blue-400 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                ? "border-red-600 focus:border-red-600 ring-red-100"
+                : "border-gray-300 focus:border-blue-400 ring-gray-100"
             }`}
             {...register("message", {
               required: "Enter your Message",
@@ -206,14 +207,19 @@ const ContactForm = () => {
             </div>
           )}
         </div>
-
+  {/* Success Message Popup */}
+  {isSuccess && message && (
+        <div className="bg-green-500 text-white px-4 py-2 rounded-md shadow-lg text-center">
+          {message}
+        </div>
+      )}
         <button
           type="submit"
           className="bg-blue-600 text-white p-2 rounded font-semibold hover:bg-blue-700"
         >
           {isSubmitting ? (
             <svg
-              className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"
+              className="w-5 h-5 mx-auto text-white animate-spin"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -237,6 +243,8 @@ const ContactForm = () => {
           )}
         </button>
       </form>
+
+    
     </div>
   );
 };

@@ -62,6 +62,10 @@ const Navbar = () => {
           <h1 className="text-orange-700 font-bold website-title">
             <NavLink to={"/"} onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
               <span>G</span>riffin<span>T</span>echs{" "}
+              <p className="font-serif text-xs -mt-4 text-center bg-gradient-to-r from-blue-600 via-yellow-500 to-red-500 bg-clip-text text-transparent">
+  Guardians of Innovation
+</p>
+
             </NavLink>
           </h1>
         </div>

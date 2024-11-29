@@ -3,6 +3,7 @@ import blogImage from '../../src/assets/bannerImages/IT_Person.jpg'
 import bannerImage from '../../src/assets/bannerImages/computerBanner.jpg'
 import samEydeVgs from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
 import backgroundImage from '../../src/assets/bannerImages/comingSoon.png'
+import HackerBanner from '../assets/bannerImages/Banner_2.png'
 const BlogPosts = () => {
   const scrollRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -11,9 +12,9 @@ const BlogPosts = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (scrollRef.current) {
-        const scrollWidth = scrollRef.current.scrollWidth;
+       
         const containerWidth = scrollRef.current.offsetWidth;
-        const totalScroll = scrollWidth - containerWidth;
+      
 
         const newSlide = currentSlide + 1 > totalSlides - 1 ? 0 : currentSlide + 1;
         setCurrentSlide(newSlide);
@@ -23,18 +24,20 @@ const BlogPosts = () => {
           behavior: 'smooth',
         });
       }
-    }, 3000); // Every 3 seconds scrolls to the next slide
+    }, 3500); // Every 3.5seconds scrolls to the next slide
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [currentSlide]);
 
   return (
+    <>
+    <div className='bg-gradient-to-br from-orange-500 via-blue-400 to-gray-500 w-4/5 m-auto blog-section-divider'> </div>
     <div className="container mx-auto px-8 py-8 w-full bg-gradient-to-br from-white via-gray-100 to-blue-200">
       <h2 className="text-3xl font-bold text-center mb-8">Latest News & Blogposts</h2>
       <p className="text-center mb-8 text-lg text-gray-600">Stay updated on what's happening with our latest posts.</p>
       <div
         ref={scrollRef}
-        className="flex overflow-x-hidden space-x-4 snap-x snap-mandatory scrollbar-hidden"
+        className="blog-section flex m-auto overflow-x-hidden space-x-4 snap-x snap-mandatory scrollbar-hidden"
       >
         <div className="flex-none w-80 bg-white shadow-lg rounded-lg p-4 snap-start">
           <img src={blogImage} alt="New offices in Arendal" className="w-full h-40 object-cover rounded-md mb-4" />
@@ -69,6 +72,42 @@ const BlogPosts = () => {
           <p className="text-gray-600 text-sm">It is important to find an employer that aligns with your values and work style. If you value work-life balance, you should...</p>
           <a href="NoLink" className="text-blue-500 mt-4 block">Learn More &rarr;</a>
         </div>
+        <div className="flex-none w-80 bg-white shadow-lg rounded-lg p-4 snap-start">
+          <img src={backgroundImage} alt="Factors to consider when choosing an employer as a developer" className="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Factors to consider when choosing an employer as a developer</h3>
+          <p className="text-gray-600 text-sm">It is important to find an employer that aligns with your values and work style. If you value work-life balance, you should...</p>
+          <a href="NoLink" className="text-blue-500 mt-4 block">Learn More &rarr;</a>
+        </div>
+        <div className="flex-none w-80 bg-white shadow-lg rounded-lg p-4 snap-start">
+          <img src={backgroundImage} alt="Factors to consider when choosing an employer as a developer" className="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Factors to consider when choosing an employer as a developer</h3>
+          <p className="text-gray-600 text-sm">It is important to find an employer that aligns with your values and work style. If you value work-life balance, you should...</p>
+          <a href="NoLink" className="text-blue-500 mt-4 block">Learn More &rarr;</a>
+        </div>
+        <div className="flex-none w-80 bg-white shadow-lg rounded-lg p-4 snap-start">
+          <img src={backgroundImage} alt="Factors to consider when choosing an employer as a developer" className="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Factors to consider when choosing an employer as a developer</h3>
+          <p className="text-gray-600 text-sm">It is important to find an employer that aligns with your values and work style. If you value work-life balance, you should...</p>
+          <a href="NoLink" className="text-blue-500 mt-4 block">Learn More &rarr;</a>
+        </div>
+        <div className="flex-none w-80 bg-white shadow-lg rounded-lg p-4 snap-start">
+          <img src={backgroundImage} alt="Factors to consider when choosing an employer as a developer" className="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Factors to consider when choosing an employer as a developer</h3>
+          <p className="text-gray-600 text-sm">It is important to find an employer that aligns with your values and work style. If you value work-life balance, you should...</p>
+          <a href="NoLink" className="text-blue-500 mt-4 block">Learn More &rarr;</a>
+        </div>
+        <div className="flex-none w-80 bg-white shadow-lg rounded-lg p-4 snap-start">
+          <img src={backgroundImage} alt="Factors to consider when choosing an employer as a developer" className="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Factors to consider when choosing an employer as a developer</h3>
+          <p className="text-gray-600 text-sm">It is important to find an employer that aligns with your values and work style. If you value work-life balance, you should...</p>
+          <a href="NoLink" className="text-blue-500 mt-4 block">Learn More &rarr;</a>
+        </div>
+        <div className="flex-none w-80 bg-white shadow-lg rounded-lg p-4 snap-start">
+          <img src={HackerBanner} alt="Factors to consider when choosing an employer as a developer" className="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Factors to consider when choosing an employer as a developer</h3>
+          <p className="text-gray-600 text-sm">It is important to find an employer that aligns with your values and work style. If you value work-life balance, you should...</p>
+          <a href="NoLink" className="text-blue-500 mt-4 block">Learn More &rarr;</a>
+        </div>
 
       </div>
 
@@ -86,6 +125,7 @@ const BlogPosts = () => {
         <a href="#NoLink" className="text-lg font-medium text-blue-600">All Posts</a>
       </div>
     </div>
+    </>
   );
 };
 

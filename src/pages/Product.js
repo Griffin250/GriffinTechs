@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Product = () => {
     const scrollToTop = () =>{
-        Window.scrollToTop({
+        window.scrollTo({
             top:0,
             behaviour:"smoooth"
         })
@@ -68,6 +68,7 @@ const Product = () => {
         <NavLink to='/contactForm' onClick={scrollToTop}>  <button className="btn px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 shadow-lg transition-all">
           Talk to an Expert  <FontAwesomeIcon icon={faArrowRight} className="right-arrow ml-2 w-6"/>
         </button></NavLink>
+        
       </div>
     </div>
   );

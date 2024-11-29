@@ -1,8 +1,17 @@
 import React from 'react';
 import Team from '../assets/bannerImages/Teams.png'
+import Hacker from '../assets/bannerImages/Banner_2.png'
+import Technician from '../assets/bannerImages/IT_Person.jpg'
 import CEO from '../assets/bannerImages/CEO.jpg'
+import { NavLink } from 'react-router-dom';
 
 const AboutUs = () => {
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    })
+  }
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
@@ -57,9 +66,9 @@ const AboutUs = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center">
             <img
-              src={CEO}
+              src={Hacker}
               alt="Expert Team"
-              className="mx-auto mb-4 h-1/2 rounded"
+              className="mx-auto mb-4 h-56 w-5/6 rounded"
             />
             <h3 className="text-xl font-semibold text-gray-700 mb-2">Expert Team</h3>
             <p className="text-gray-600">
@@ -92,15 +101,15 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 px-4 md:px-20 bg-gradient-to-tl from-blue-200 via-gray-100">
+      <section className="py-16 px-4 md:px-20 bg-gradient-to-tl from-blue-100 via-gray-100">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Meet Our Team</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {/* Team Member 1 */}
           <div className="text-center">
             <img
-              src={CEO}
+              src={Hacker}
               alt="Team Member 1"
-              className="rounded-full mx-auto mb-4 h-1/2"
+              className="rounded-full mx-auto mb-4 h-48 w-48"
             />
             <h3 className="text-xl font-semibold text-gray-700">John Doe</h3>
             <p className="text-gray-600">CEO & Founder</p>
@@ -118,9 +127,9 @@ const AboutUs = () => {
           {/* Team Member 3 */}
           <div className="text-center">
             <img
-              src={CEO}
+              src={Technician}
               alt="Team Member 3"
-              className="rounded-full mx-auto mb-4 h-1/2"
+              className="rounded-full mx-auto mb-4 h-48 w-48"
             />
             <h3 className="text-xl font-semibold text-gray-700"> Brown Lee </h3>
             <p className="text-gray-600">Senior Consultant</p>
@@ -129,15 +138,14 @@ const AboutUs = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gray-700 text-white py-12 text-center">
+      <section className="bg-gradient-to-tr from-blue-100 via-orange-50 to-blue-100 text-gray-800 py-12 text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Partner With Us?</h2>
         <p className="text-lg mb-6">Let’s transform your business with expert IT solutions and consultancy.</p>
-        <a
-          href="/contact"
-          className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100"
+        <NavLink to={'/ContactForm'} onClick={scrollToTop}> <button
+          className="px-6 py-3  bg-orange-800 font-bold rounded-lg shadow-lg hover:bg-orange-600 text-white"
         >
           Contact Us
-        </a>
+        </button></NavLink>
       </section>
     </div>
   );
