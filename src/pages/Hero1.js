@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import heroImage from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
+import heroImage from '../../src/assets/bannerImages/comingSoon.png'
 
 
-const HeroSection = () => {
+const Hero1 = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -16,7 +16,7 @@ const HeroSection = () => {
       title: "Empower Teachers with Tools",
       description:
         "Provide teachers with tools to manage their classes, track progress, and enhance student outcomes.",
-      image: "/path-to-image2.png",
+      image: "/assets/bannerImages/comingSoon.png",
     },
     {
       title: "Seamless Parent Communication",
@@ -47,7 +47,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full  overflow-hidden bg-gray-200">
+    <div className="relative w-full  overflow-hidden  bg-gradient-to-br from-blue-200 via-gray-100">
       {/* Slide Container */}
       <div className="flex transition-transform duration-500 ease-in-out transform"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
@@ -102,4 +102,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero1;

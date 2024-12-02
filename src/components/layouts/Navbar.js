@@ -62,7 +62,7 @@ const Navbar = () => {
           <h1 className="text-orange-700 font-bold website-title">
             <NavLink to={"/"} onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
               <span>G</span>riffin<span>T</span>echs{" "}
-              <p className="web-slogan font-serif text-xs text-center bg-gradient-to-r from-blue-600 via-yellow-500 to-red-500 bg-clip-text text-transparent">
+              <p className="web-slogan font-serif text-xs text-center bg-gradient-to-r from-orange-600 via-blue-400 to-orange-500 bg-clip-text text-transparent">
   Guardians of Innovation
 </p>
 

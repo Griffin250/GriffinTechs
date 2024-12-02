@@ -3,6 +3,8 @@ import samEydeVgs from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
 import ConsultationSection from '../components/layouts/ConsultationSection'
 import BlogPosts from './BlogPosts'
 import ContactForm from './Contact'
+import Hero1 from './Hero1'
+import Hero2 from './Hero2'
 import PricingSection from './PricingSection'
 import Product from './Product'
 
@@ -23,7 +25,8 @@ const links = [
     return (
         <>
        
-       
+       <Hero1/>
+       <Hero2 />
         <PricingSection />
         <ConsultationSection />
     <div className="bg-gray-100 py-12 px-6 md:px-16 lg:px-24">

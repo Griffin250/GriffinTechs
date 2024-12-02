@@ -50,9 +50,9 @@ const ContactForm = () => {
   });
 
   return (
-    <div className="flex flex-col md:flex-row justify-between p-6 md:p-12 bg-gradient-to-br from-blue-200 via-gray-100 text-gray-800">
+    <div className="flex flex-col md:flex-row justify-between mt-14 p-6 md:p-12 bg-gradient-to-br from-blue-200 via-gray-100 text-gray-800">
       {/* Left Section */}
-      <div className="flex flex-col mb-8 md:mb-0 md:w-1/3">
+      <div className="flex flex-col mb-8 md:mb-0 md:w-1/3 mt-16">
         <div className="border-t border-gray-500 w-8 mb-2"></div>
         <h2 className="text-2xl font-semibold mb-4">Connect with us</h2>
 
@@ -118,57 +118,60 @@ const ContactForm = () => {
 
       {/* Right Section */}
       <form
-        className="flex flex-col space-y-4 md:w-2/3"
+        className="flex flex-col space-y-4 md:w-2/3 mt-12"
         method="post"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <div>
+          <input
+            type="checkbox"
+            id=""
+            className="hidden"
+            style={{ display: "none" }}
+            {...register("botcheck")}
+          />
+        </div>
         <div className="flex flex-col md:flex-row md:space-x-4">
-  <input
-    type="checkbox"
-    id=""
-    className="hidden"
-    style={{ display: "none" }}
-    {...register("botcheck")}
-  />
-  <div className="flex flex-col w-full md:w-1/2 md:mt-0 mt-4">
-    <label className="text-sm font-semibold">First Name (required)</label>
-    <input
-      type="text"
-      placeholder="First Name"
-      autoComplete="false"
-      className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none focus:ring-4  
+          <div className="flex flex-col w-full md:w-1/2 md:mt-0 mt-4">
+            <label className="text-sm font-semibold">
+              First Name (required)
+            </label>
+            <input
+              type="text"
+              placeholder="First Name"
+              autoComplete="false"
+              className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none focus:ring-4  
       ${
         errors["First Name"]
           ? "border-red-600 focus:border-red-600 ring-red-100"
           : "border-gray-300 focus:border-blue-400 ring-gray-100"
       }`}
-      {...register("First Name", {
-        required: "First name is required",
-        maxLength: 80,
-      })}
-    />
-  </div>
+              {...register("First Name", {
+                required: "First name is required",
+                maxLength: 80,
+              })}
+            />
+          </div>
 
-  <div className="flex flex-col w-full md:w-1/2 md:mt-0 mt-4">
-    <label className="text-sm font-semibold">Last Name</label>
-    <input
-      type="text"
-      placeholder="Last Name"
-      autoComplete="false"
-      className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none focus:ring-4  
+          <div className="flex flex-col w-full md:w-1/2 md:mt-0 mt-4">
+            <label className="text-sm font-semibold">Last Name</label>
+            <input
+              type="text"
+              placeholder="Last Name"
+              autoComplete="false"
+              className={`w-full px-4 py-3 border placeholder:text-gray-800 rounded-md outline-none focus:ring-4  
       ${
         errors["Last Name"]
           ? "border-red-600 focus:border-red-600 ring-red-100"
           : "border-gray-300 focus:border-blue-400 ring-gray-100"
       }`}
-      {...register("Last Name", {
-        required: "Last Name is required",
-        maxLength: 80,
-      })}
-    />
-  </div>
-</div>
-
+              {...register("Last Name", {
+                required: "Last Name is required",
+                maxLength: 80,
+              })}
+            />
+          </div>
+        </div>
 
         <div className="mb-5">
           <label htmlFor="email_address" className="sr-only">
@@ -219,12 +222,12 @@ const ContactForm = () => {
             </div>
           )}
         </div>
-  {/* Success Message Popup */}
-  {isSuccess && message && (
-        <div className="bg-green-500 text-white px-4 py-2 rounded-md shadow-lg text-center">
-          {message}
-        </div>
-      )}
+        {/* Success Message Popup */}
+        {isSuccess && message && (
+          <div className="bg-green-500 text-white px-4 py-2 rounded-md shadow-lg text-center">
+            {message}
+          </div>
+        )}
         <button
           type="submit"
           className="bg-blue-600 text-white p-2 rounded font-semibold hover:bg-blue-700"
@@ -255,8 +258,6 @@ const ContactForm = () => {
           )}
         </button>
       </form>
-
-    
     </div>
   );
 };

@@ -1,12 +1,21 @@
-import React from 'react'
-import comingSoonBanner from '../../src/assets/bannerImages/comingSoon.png'
+import React from "react";
+import Lottie from "lottie-react";
+import codingAnimation from "../components/ui/CodingAnimation.json";
+
 const Projects = () => {
   return (
-    <div className='bg-gray-100'>
-      <h2 className='text-4xl m-auto text-center'>This page is under Development. <br /> <br /> <br /> Come Back Later!</h2>
-      <img src={comingSoonBanner} alt='' className='m-auto'/>
+    <div className="bg-gray-100">
+     
+      {/* Resize animation using style prop */}
+      <div className="flex justify-center">
+        <Lottie
+          animationData={codingAnimation}
+          loop={true}
+          style={{ width: "700px", height: "600px" }} // Adjust size here
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

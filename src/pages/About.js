@@ -13,7 +13,7 @@ const AboutUs = () => {
     })
   }
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 mt-12">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-200 via-gray-100 text-gray-800 py-20 px-4 text-center justify-start">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>

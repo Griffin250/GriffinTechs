@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { login, signup } from "../Auth/Firebase";
 import { useNavigate } from "react-router-dom";
+import SmallFooter from '../layouts/SmallFooter'
+import SmallNavBar from "../layouts/SmallNavBar";
 
 const LoginSignup = () => {
   const [signState, setSignState] = useState("Sign In");
@@ -34,8 +36,10 @@ const LoginSignup = () => {
   };
 
   return (
+    <> 
+    <SmallNavBar />
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-tl from-blue-200 via-gray-100 to-blue-50 text-white">
-      <div className="w-full max-w-md bg-gray-900 rounded-lg shadow-md p-8">
+      <div className="w-full max-w-md bg-gray-900 rounded-lg shadow-md p-8 m-5">
         {/* Form Title */}
         <h1 className="text-2xl font-bold mb-6 text-center">{signState}</h1>
 
@@ -150,6 +154,8 @@ const LoginSignup = () => {
         </div>
       </div>
     </div>
+    <SmallFooter/>
+    </>
   );
 };
 

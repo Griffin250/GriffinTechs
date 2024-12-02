@@ -1,11 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import NotFoundAnimation from '../components/ui/NotFoundAnimation.json'
 
 const NotFound = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-black">
-      <h1 className="text-6xl font-bold">404</h1>
-      <p className="text-xl mt-4 text-center">
+      <Lottie
+          animationData={NotFoundAnimation}
+          loop={true}
+          style={{ width: "400px", height: "400px" }} // Adjust size here
+        />
+     
+      <p className="text-xl mt-2 text-center">
   Oops! This page is <strong>hidden by the developer</strong> because the owner hasn’t paid their dues! 💸 <br/> 
   <a href="#payme" className="text-orange-700 underline">
     Click here if you’re the <strong>owner</strong> and want it back!
