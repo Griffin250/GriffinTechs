@@ -1,16 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import Footer from "./components/layouts/Footer";
-import Navbar from "./components/layouts/Navbar";
-import Home from "../src/pages/Home";
-import ContactForm from "./pages/Contact";
-import Chatbot from "./components/ui/Chatbot";
-import Services from "../src/pages/Services";
-import Help from "../src/components/layouts/Help";
-import NotFound from "./pages/NotFound";
-import LoginSignup from "./components/Auth/LoginSignup";
-import Projects from "./pages/Projects";
-import AboutUs from "./pages/About";
+import Footer from "./components/layouts/Footer.js";
+import Navbar from "./components/layouts/Navbar.js";
+import Home from "../src/pages/Home.js";
+import ContactForm from "./pages/Contact.js";
+import Chatbot from "./components/ui/Chatbot.js";
+
+import Services from "../src/pages/Services.js";
+import Help from "../src/components/layouts/Help.js";
+import NotFound from "./pages/NotFound.js";
+import LoginSignup from "./components/Auth/LoginSignup.js";
+import Projects from "./pages/Projects.js";
+import AboutUs from "./pages/About.js";
 
 const App = () => {
   return (

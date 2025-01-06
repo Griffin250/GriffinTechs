@@ -36,6 +36,9 @@ html, body{
 .blog-section-divider{
   height: 1.6px;
 }
+.chatbot-btn{
+  height: 41.8px;
+}
 
   /* Extra Small Devices (Phones) */
   @media (max-width: 480px) {

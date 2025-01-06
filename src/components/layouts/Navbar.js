@@ -38,14 +38,14 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   //Scroll to Top when a navLink is clicked!
-  const scrollToTop = () =>{
+  const scrollToTop = () => {
     window.scrollTo({
-      top:0,
-      behaviour:"smooth"
+      top: 0,
+      behaviour: "smooth",
     });
-  }
+  };
   return (
-      <div
+    <div
       className={`bg-gray-900 fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
@@ -60,12 +60,17 @@ const Navbar = () => {
             className="w-12 h-12 rounded-full sm:w-20 sm:h-20"
           />
           <h1 className="text-orange-700 font-bold website-title">
-            <NavLink to={"/"} onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink
+              to={"/"}
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               <span>G</span>riffin<span>T</span>echs{" "}
               <p className="web-slogan font-serif text-xs text-center bg-gradient-to-r from-orange-600 via-blue-400 to-orange-500 bg-clip-text text-transparent">
-  Guardians of Innovation
-</p>
-
+                Guardians of Innovation
+              </p>
             </NavLink>
           </h1>
         </div>
@@ -116,13 +121,17 @@ const Navbar = () => {
         {/* Right side - New Job Button, Notification Icon, Profile */}
         <div className="flex items-center space-x-6">
           <form className="searchForm flex" method="get">
-            <input type="seacrh" placeholder="Search here..."  className="hidden"/> 
-          <FontAwesomeIcon
-            icon={faSearch}
-            className="text-gray-400 hover:text-white cursor-pointer h-6 md:block"
-          />
+            <input
+              type="seacrh"
+              placeholder="Search here..."
+              className="hidden"
+            />
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="text-gray-400 hover:text-white cursor-pointer h-6 md:block"
+            />
           </form>
-         
+
           <NavLink to={"/loginSignup"} onClick={scrollToTop}>
             {" "}
             <button className="hidden md:flex items-center space-x-1 border-orange-600 border hover:bg-orange-600 text-white py-1 px-3 rounded-lg font-bold text-xl">
@@ -152,48 +161,96 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-gray-900 text-gray-400 p-4 space-y-2">
           <ul className="md:flex items-center space-x-6 text-gray-400">
-            <NavLink to={"/"}  onClick={() => { scrollToTop(); setMobileMenuOpen(false); }} >
+            <NavLink
+              to={"/"}
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Home
               </li>{" "}
             </NavLink>
-            <NavLink to="/aboutus" onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink
+              to="/aboutus"
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               {" "}
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 About
               </li>
             </NavLink>
-            <NavLink to="/services" onClick={()=>{scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink
+              to="/services"
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               {" "}
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Services <FontAwesomeIcon icon={faChevronDown} />
               </li>
             </NavLink>
-            <NavLink to="/projects" onClick={()=> {scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink
+              to="/projects"
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               {" "}
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Projects <FontAwesomeIcon icon={faChevronDown} />
               </li>
             </NavLink>
-            <NavLink to="/developers" onClick={() => {scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink
+              to="/developers"
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               {" "}
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Developers <FontAwesomeIcon icon={faChevronDown} />
               </li>
             </NavLink>
-            <NavLink to="/contactForm" onClick={()=> {scrollToTop(); setMobileMenuOpen(false); }}>
+            <NavLink
+              to="/contactForm"
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               {" "}
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Contact
               </li>
             </NavLink>
-            <NavLink to="/community" onClick={() => {scrollToTop(); setMobileMenuOpen(false);}}>
+            <NavLink
+              to="/community"
+              onClick={() => {
+                scrollToTop();
+                setMobileMenuOpen(false);
+              }}
+            >
               <li className="hover:text-white font-bold hover:bg-gray-700 p-2 rounded-md cursor-pointer">
                 Community
               </li>
             </NavLink>
           </ul>
-          <NavLink to={"/loginSignup"} onClick={() => { scrollToTop(); setMobileMenuOpen(false); }}>
+          <NavLink
+            to={"/loginSignup"}
+            onClick={() => {
+              scrollToTop();
+              setMobileMenuOpen(false);
+            }}
+          >
             {" "}
             <button className="md:flex items-center space-x-1 bg-orange-700 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
               <span>Join Us</span>

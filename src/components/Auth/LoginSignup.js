@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { login, signup } from "../Auth/Firebase";
+import { login, signup } from "../Auth/Firebase.js";
 import { useNavigate } from "react-router-dom";
-import SmallFooter from '../layouts/SmallFooter'
-import SmallNavBar from "../layouts/SmallNavBar";
+import SmallFooter from '../layouts/SmallFooter.js'
+import SmallNavBar from "../layouts/SmallNavBar.js";
 
 const LoginSignup = () => {
   const [signState, setSignState] = useState("Sign In");

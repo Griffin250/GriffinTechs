@@ -1,6 +1,7 @@
-import { faClose, faMinus, faPaperPlane, faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faMinus, faRobot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import Chats from './ChatGPT/Chatbot.js';
 
 const ChatbotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,27 +28,29 @@ const ChatbotButton = () => {
           </div>
           <div className="mt-4 overflow-y-auto h-80">
             <p className="text-sm text-white">Hello! How can I assist you today?</p>
+
+            <Chats />
             {/* <p className='mt-4 overflow-y-auto p-4 rounded-t-3xl bg-gray-200'> Thank you for contacting GriffinTechs. 
               By continuing you agree to our privacy policy <a href='#privacy' className='text-blue-400'>https://newfold.com/privacy-center </a> </p>*/}
             {/* Chat messages would go here */}
            
           </div>
           <div className="relative flex items-center w-full">
-  {/* Input Field */}
+  {/* Input Field 
   <form method='get' className='relative flex items-center w-full'>
   <input
     type="text"
     placeholder="Type your message..."
     className="flex-1 p-2 pr-14 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
   />
-  {/* Send Button */}
+ 
   <button
     className="absolute right-0 h-full px-4 text-orange-600 flex items-center justify-center"
     type="submit"
   >
     <FontAwesomeIcon icon={faPaperPlane}  className='h-6 w-6' title='Ask AI'/>
   </button>
-  </form>
+  </form>*/}
 </div>
           <p className='text-white'>Your use of this Chatbot is governed by this <a href='#discalimer' className='text-blue-400'> disclaimer. </a></p>
         </div>

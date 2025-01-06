@@ -1,12 +1,12 @@
 
 import samEydeVgs from '../../src/assets/bannerImages/Sameyde.vgs.jpg'
-import ConsultationSection from '../components/layouts/ConsultationSection'
-import BlogPosts from './BlogPosts'
-import ContactForm from './Contact'
-import Hero1 from './Hero1'
-import Hero2 from './Hero2'
-import PricingSection from './PricingSection'
-import Product from './Product'
+import ConsultationSection from '../components/layouts/ConsultationSection.js'
+import BlogPosts from './BlogPosts.js'
+import ContactForm from './Contact.js'
+import Hero1 from './Hero1.js'
+import Hero2 from './Hero2.js'
+import PricingSection from './PricingSection.js'
+import Product from './Product.js'
 
 const links = [
     { name: 'Open roles', href: '#' },
@@ -29,6 +29,7 @@ const links = [
        <Hero2 />
         <PricingSection />
         <ConsultationSection />
+        
     <div className="bg-gray-100 py-12 px-6 md:px-16 lg:px-24">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}

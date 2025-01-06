@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
   const {
@@ -21,6 +22,7 @@ const ContactForm = () => {
 
   const [isSuccess, setIsSuccess] = useState(false);
   const [message, setMessage] = useState("");
+  const [captchaToken, setCaptchaToken] = useState("");
 
   // Please update the Access Key in the .env
   const apiKey =
@@ -48,6 +50,23 @@ const ContactForm = () => {
       setMessage("Failed to send the message. Please try again.");
     },
   });
+
+  // reCAPTCHA handler
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
+
+  const handleFormSubmit = async (data) => {
+    if (!captchaToken) {
+      setMessage("Please complete the reCAPTCHA verification.");
+      setIsSuccess(false);
+      return;
+    }
+
+    // Include the captcha token in the form data
+    data["g-recaptcha-response"] = captchaToken;
+    onSubmit(data);
+  };
 
   return (
     <div className="flex flex-col md:flex-row justify-between mt-14 p-6 md:p-12 bg-gradient-to-br from-blue-200 via-gray-100 text-gray-800">
@@ -120,17 +139,8 @@ const ContactForm = () => {
       <form
         className="flex flex-col space-y-4 md:w-2/3 mt-12"
         method="post"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(handleFormSubmit)}
       >
-        <div>
-          <input
-            type="checkbox"
-            id=""
-            className="hidden"
-            style={{ display: "none" }}
-            {...register("botcheck")}
-          />
-        </div>
         <div className="flex flex-col md:flex-row md:space-x-4">
           <div className="flex flex-col w-full md:w-1/2 md:mt-0 mt-4">
             <label className="text-sm font-semibold">
@@ -222,44 +232,33 @@ const ContactForm = () => {
             </div>
           )}
         </div>
-        {/* Success Message Popup */}
-        {isSuccess && message && (
-          <div className="bg-green-500 text-white px-4 py-2 rounded-md shadow-lg text-center">
-            {message}
-          </div>
-        )}
+
+        {/* reCAPTCHA */}
+        <div className="mb-4">
+          <ReCAPTCHA
+            sitekey="6Lc9kY4qAAAAAMOOyJabRJhOc_NrecUXe-iSYDZ5"
+            onChange={handleCaptchaChange}
+          />
+        </div>
+
         <button
           type="submit"
-          className="bg-blue-600 text-white p-2 rounded font-semibold hover:bg-blue-700"
+          className="w-full py-3 px-6 text-white rounded-md bg-blue-700 focus:outline-none 
+          ring-offset-2 focus:ring-2 focus:ring-offset-blue-100 focus:ring-blue-500 hover:bg-blue-800"
+          disabled={isSubmitting}
         >
-          {isSubmitting ? (
-            <svg
-              className="w-5 h-5 mx-auto text-white animate-spin"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              ></path>
-            </svg>
-          ) : (
-            "Send Message"
-          )}
+          {isSubmitting ? "Submitting..." : "Send Message"}
         </button>
+
+        {message && (
+          <div
+            className={`mt-4 ${isSuccess ? "text-green-600" : "text-red-600"}`}
+          >
+            <small>{message}</small>
+          </div>
+        )}
       </form>
     </div>
   );
 };
-
 export default ContactForm;
